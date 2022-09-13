@@ -102,14 +102,32 @@ class DBManager: NSObject {
             
             data.forEach { newData in
                 
-                if let title = newData["title"] as? String{
-                    cachedItem = getItemWith(Title: title)
+                if let nasaId = newData["nasa_id"] as? String{
+                    cachedItem = getItemWith(Title: nasaId)
+                    
+                    if let title = newData["title"] as? String {
+                        cachedItem?.title = title
+                    }
                     
                     if let photographer = newData["photographer"] as? String {
                         cachedItem?.photographer = photographer
                     }
-
+                    if let desc = newData["description"] as? String {
+                        cachedItem?.descriptionDisplay = desc
+                    }
+                    if let dateCreated = newData["dateCreated"] as? String {
+                        cachedItem?.dateCreated = dateCreated
+                    }
                 }
+                
+                if let links = itemDictionary["links"] as? [AnyObject]{
+                    links.forEach { linkDetail in
+                        if let href = linkDetail["href"] as? String{
+                            cachedItem?.imageUrl = href
+                        }
+                    }
+                }
+                
             }
             
             return cachedItem
