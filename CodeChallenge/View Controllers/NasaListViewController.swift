@@ -36,8 +36,6 @@ class NasaListViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        navigationItem.title = ""
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
