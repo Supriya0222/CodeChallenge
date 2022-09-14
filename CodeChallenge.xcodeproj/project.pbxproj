@@ -24,6 +24,8 @@
 		94112E7A28D0F1DD00F04305 /* NasaFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94112E7828D0F1DD00F04305 /* NasaFeedTableViewCell.swift */; };
 		94112E7B28D0F1DD00F04305 /* NasaFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94112E7928D0F1DD00F04305 /* NasaFeedTableViewCell.xib */; };
 		94112E7D28D0FC0800F04305 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94112E7C28D0FC0800F04305 /* ImageViewExtension.swift */; };
+		94112EBB28D1842C00F04305 /* NasaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94112EBA28D1842C00F04305 /* NasaListViewController.swift */; };
+		94112EBF28D1858100F04305 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94112EBE28D1858100F04305 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		94112E7828D0F1DD00F04305 /* NasaFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaFeedTableViewCell.swift; sourceTree = "<group>"; };
 		94112E7928D0F1DD00F04305 /* NasaFeedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NasaFeedTableViewCell.xib; sourceTree = "<group>"; };
 		94112E7C28D0FC0800F04305 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		94112EBA28D1842C00F04305 /* NasaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaListViewController.swift; sourceTree = "<group>"; };
+		94112EBE28D1858100F04305 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +124,9 @@
 				94112E7728D0F00600F04305 /* Utilities */,
 				94112E7628D0EFCB00F04305 /* StoryboardsAndNibs */,
 				94112E7128D0CB7000F04305 /* Database+CoreDataModels */,
+				94112EBC28D1852500F04305 /* View Models */,
 				94112E3A28D0B18B00F04305 /* ViewController.swift */,
-				94112E6F28D0B4EF00F04305 /* FeedViewModel.swift */,
+				94112EBD28D1854B00F04305 /* View Controllers */,
 				94112E4428D0B18C00F04305 /* Info.plist */,
 				94112E3F28D0B18C00F04305 /* Assets.xcassets */,
 			);
@@ -173,6 +178,23 @@
 				94112E7C28D0FC0800F04305 /* ImageViewExtension.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		94112EBC28D1852500F04305 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				94112E6F28D0B4EF00F04305 /* FeedViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		94112EBD28D1854B00F04305 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				94112EBA28D1842C00F04305 /* NasaListViewController.swift */,
+				94112EBE28D1858100F04305 /* DetailsViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,9 +336,11 @@
 				94112E7028D0B4EF00F04305 /* FeedViewModel.swift in Sources */,
 				94112E3728D0B18B00F04305 /* AppDelegate.swift in Sources */,
 				94112E7A28D0F1DD00F04305 /* NasaFeedTableViewCell.swift in Sources */,
+				94112EBB28D1842C00F04305 /* NasaListViewController.swift in Sources */,
 				94112E6828D0B1AB00F04305 /* ItemModel.xcdatamodeld in Sources */,
 				94112E7528D0EAAF00F04305 /* Utilities.swift in Sources */,
 				94112E3928D0B18B00F04305 /* SceneDelegate.swift in Sources */,
+				94112EBF28D1858100F04305 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -115,7 +115,7 @@ class DBManager: NSObject {
                     if let desc = newData["description"] as? String {
                         cachedItem?.descriptionDisplay = desc
                     }
-                    if let dateCreated = newData["dateCreated"] as? String {
+                    if let dateCreated = newData["date_created"] as? String {
                         cachedItem?.dateCreated = dateCreated
                     }
                 }
@@ -131,11 +131,9 @@ class DBManager: NSObject {
             }
             
             return cachedItem
-
         }
         
         return nil
-
     }
 
 }

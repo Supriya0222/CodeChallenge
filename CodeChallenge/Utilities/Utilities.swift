@@ -23,13 +23,14 @@ public func getDate(WithString string: String, format: String) -> String {
     dateFormatter.locale = Locale(identifier: "en_US_POSIX")
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     let date = dateFormatter.date(from: string)
-    
+
     dateFormatter.dateFormat = format
     
-    if let formattedDate = dateFormatter.date(from: string){
-        return "\(formattedDate)"
+    if let _ = date{
+        return "\(dateFormatter.string(from: date!))"
     }
     return ""
+
 }
 
 class AlertViewUtility{

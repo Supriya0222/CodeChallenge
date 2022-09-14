@@ -37,17 +37,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrs-rD-vUo">
-                        <rect key="frame" x="118" y="29" width="0.0" height="0.0"/>
+                        <rect key="frame" x="117" y="29" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shU-q1-UZ2">
-                        <rect key="frame" x="111" y="29" width="2" height="16"/>
+                        <rect key="frame" x="111" y="29" width="1" height="16"/>
                         <color key="backgroundColor" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="7BJ-MM-GzD"/>
-                            <constraint firstAttribute="width" constant="2" id="GMU-L8-fmc"/>
+                            <constraint firstAttribute="width" constant="1" id="GMU-L8-fmc"/>
                         </constraints>
                     </view>
                 </subviews>
