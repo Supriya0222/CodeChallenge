@@ -63,5 +63,22 @@ class FeedViewModel {
        }
        return nil
    }
+    
+    func getDate(WithString string: String, format: String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: string)
+
+        dateFormatter.dateFormat = format
+        
+        if let _ = date{
+            return "\(dateFormatter.string(from: date!))"
+        }
+        return ""
+
+    }
+
 
 }

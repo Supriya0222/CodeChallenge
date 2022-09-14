@@ -74,6 +74,7 @@ extension NasaListViewController {
                 self.nasaFeedTableView.reloadSections(IndexSet(integersIn: 0...0), with: .automatic)
             }
         }else{
+            //API request to get list item
             viewModel.requestCall(completed: { (success, errorMessage) in
                 if success{
                     DispatchQueue.main.async {

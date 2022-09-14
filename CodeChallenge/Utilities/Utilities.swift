@@ -18,21 +18,6 @@ public func addLoader(ToMainView view : UIView) -> UIActivityIndicatorView{
     return activityIndicator
 }
 
-public func getDate(WithString string: String, format: String) -> String {
-    let dateFormatter = DateFormatter()
-    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-    let date = dateFormatter.date(from: string)
-
-    dateFormatter.dateFormat = format
-    
-    if let _ = date{
-        return "\(dateFormatter.string(from: date!))"
-    }
-    return ""
-
-}
-
 class AlertViewUtility{
     
     open class func showAlertWithTitle(_ container:UIViewController, tintColor:UIColor?,title:String , message:String , cancelButtonTitle:String , completion :@escaping (_ completion:Bool) ->Void){

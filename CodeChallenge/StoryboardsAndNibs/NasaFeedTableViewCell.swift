@@ -14,6 +14,8 @@ class NasaFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var feedPhotographerLbl: UILabel!
     @IBOutlet weak var feedDateLbl: UILabel!
     
+    var viewModel : FeedViewModel = FeedViewModel()
+
     var item: Item? = nil {
         didSet {
             if let item = item{
@@ -30,7 +32,7 @@ class NasaFeedTableViewCell: UITableViewCell {
                 }
                 
                 if let dateString = item.dateCreated {
-                    feedDateLbl.text = getDate(WithString: dateString, format: "dd MMM, yyyy")
+                    feedDateLbl.text = viewModel.getDate(WithString: dateString, format: "dd MMM, yyyy")
                 }
             }
         }

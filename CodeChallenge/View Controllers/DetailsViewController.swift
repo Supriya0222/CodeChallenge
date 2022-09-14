@@ -18,6 +18,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var scrollViewWidthConstant: NSLayoutConstraint!
     
+    var viewModel: FeedViewModel = FeedViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class DetailsViewController: UIViewController {
             }
             
             if let dateString = item.dateCreated{
-                dateLbl.text = getDate(WithString: dateString, format: "dd MMM, yyyy")
+                dateLbl.text = viewModel.getDate(WithString: dateString, format: "dd MMM, yyyy")
             }
             
             if let urlString = item.imageUrl, let url = URL.init(string: urlString.trimmingCharacters(in: .whitespacesAndNewlines)){
