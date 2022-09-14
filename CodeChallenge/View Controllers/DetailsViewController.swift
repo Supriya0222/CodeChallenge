@@ -16,11 +16,16 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var photographerLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
+    @IBOutlet weak var scrollViewWidthConstant: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateUI()
+        
+        //Set width barometer for scroll view
+        scrollViewWidthConstant.constant = UIScreen.main.bounds.width
 
     }
     
@@ -33,6 +38,7 @@ class DetailsViewController: UIViewController {
             
             if let desc = item.descriptionDisplay{
                 descLbl.text = desc.trimmingCharacters(in: .whitespacesAndNewlines)
+                descLbl.setLineHeight(lineHeight: 8.0)
             }
             
             if let dateString = item.dateCreated{
