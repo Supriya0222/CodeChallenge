@@ -43,36 +43,8 @@ class NasaListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //Check if data already retrieved and load from db if so.
-        if loaded{
-            viewModel.feeds = DBManager.shared.fetchAllItems()
-            DispatchQueue.main.async {
-                self.removeLoader()
-                self.nasaFeedTableView.reloadSections(IndexSet(integersIn: 0...0), with: .automatic)
-            }
-        }else{
-            viewModel.requestCall(completed: { (success, errorMessage) in
-                if success{
-                    DispatchQueue.main.async {
-                        self.removeLoader()
-                        self.nasaFeedTableView.reloadSections(IndexSet(integersIn: 0...0), with: .automatic)
-                    }
-                }else{
-                    if let errorMessage = errorMessage{
-                    
-                        DispatchQueue.main.async {
-                            self.removeLoader()
-                            AlertViewUtility.showAlertWithTitle(self, tintColor: nil, title: "Error", message: errorMessage, cancelButtonTitle: "OK", completion: { (finished) in
-                                
-                            })
-                        }
-                    }
-                }
-
-            })
-        }
-
-        loaded = true
+        loadFeed()
+        
     }
     
 }
@@ -93,6 +65,43 @@ extension NasaListViewController {
         nasaFeedTableView.rowHeight = UITableView.automaticDimension
         nasaFeedTableView.estimatedRowHeight = 113
         nasaFeedTableView.register(UINib.init(nibName: "NasaFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "NasaFeedTableViewCell")
+    }
+    
+    fileprivate func loadFeed() {
+        //Check if data already retrieved and load from db if so.
+        if loaded{
+            viewModel.feeds = DBManager.shared.fetchAllItems()
+            DispatchQueue.main.async {
+                self.removeLoader()
+                self.nasaFeedTableView.reloadSections(IndexSet(integersIn: 0...0), with: .automatic)
+            }
+        }else{
+            viewModel.requestCall(completed: { (success, errorMessage) in
+                if success{
+                    DispatchQueue.main.async {
+                        self.loaded = true
+                        self.removeLoader()
+                        self.nasaFeedTableView.reloadSections(IndexSet(integersIn: 0...0), with: .automatic)
+                    }
+                }else{
+                    if let errorMessage = errorMessage{
+                        DispatchQueue.main.async {
+                            self.removeLoader()
+                            
+                            AlertViewUtility.showAlertWithTitle(self, tintColor: nil, title: "Error", message: errorMessage, cancelButtonTitle: "Retry", completion: { [self] (finished) in
+                                
+                                //Add activity indicator to view while loading content
+                                loader = addLoader(ToMainView: view)
+
+                                self.loadFeed()
+                            })
+                        }
+                    }
+                }
+
+            })
+        }
+
     }
 
 }
